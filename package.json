@@ -1,7 +1,7 @@
 {
   "name": "castt-moleculer-template",
   "version": "1.0.0",
-  "description": "Minimal project template for one microservice.",
+  "description": "Template for generating microservices for Castt.",
   "main": "meta.js",
   "repository": {
     "type": "git",

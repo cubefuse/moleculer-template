@@ -31,7 +31,8 @@
 To install use the [moleculer-cli](https://github.com/moleculerjs/moleculer-cli) tool.
 
 ```bash
-$ moleculer init gitlab:cubefuse/castt/moleculer-template sample-microservice
+npm install -g moleculer-cli
+moleculer init cubefuse/moleculer-template sample-microservice
 ```
 
 
