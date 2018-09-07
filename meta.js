@@ -4,80 +4,35 @@ module.exports = function(values) {
 	return {
 		questions: [
 			{
-				type: "list",
-				name: "transporter",
-				message: "Select a transporter",
-				choices: [
-					{ name: "TCP", value: "TCP" },
-					{ name: "NATS", value: "NATS" },
-					{ name: "MQTT", value: "MQTT" },
-					{ name: "AMQP", value: "AMQP" },
-					{ name: "Redis", value: "Redis" },
-					{ name: "NATS Streaming", value: "STAN" },
-					{ name: "Kafka", value: "Kafka" }
-				],
-				default: "TCP"
+				type: "input",
+        name: "displayName",
+        message: "Display name:",
+        default() {
+          return values.projectName
+        }
 			},
-			{
-				type: "confirm",
-				name: "needCacher",
-				message: "Would you like use cache?",
-				default: false
-			},
-			{
-				type: "list",
-				name: "cacher",
-				message: "Select a cacher solution",
-				choices: [
-					{ name: "Memory", value: "Memory" },
-					{ name: "Redis", value: "Redis" }
-				],
-				when(answers) { return answers.needCacher; },
-				default: "Memory"
-			},
-			{
-				type: "confirm",
-				name: "docker",
-				message: "Add Docker files?",
-				default: true
-			},			
-			{
-				type: "confirm",
-				name: "lint",
-				message: "Use ESLint to lint your code?",
-				default: true
-			},
-			{
-				type: "confirm",
-				name: "jest",
-				message: "Setup unit tests with Jest?",
-				default: true
-			}		
+      {
+        type: "input",
+        name: "description",
+        message: "Description:",
+        default() {
+          return values.displayName
+        }
+      }
 		],
 
-		metalsmith: {
-			before(metalsmith) {
-				const data = metalsmith.metadata();
-				data.needTransporter = !! data.transporter;
-				data.redis = data.cacher == "Redis" || data.transporter == "Redis";
-				data.hasDepends = (data.needCacher && data.cacher !== 'Memory') || (data.needTransporter && data.transporter != "TCP");
-			}
-		},		
-
-		"filters": {
-			".eslintrc.js": "lint",
-			"test/**/*": "jest",
-			".dockerignore": "docker",
-			"docker-compose.*": "docker",
-			"Dockerfile": "docker"
-		},
-
 		completeMessage: `
+Awesome! The {{displayName}} has been created!
+
 To get started:
 
 	cd {{projectName}}
+	npm install
 	npm run dev
 
+Don't forget to add an introduction of this microservice to the Readme file.
+
+Let's code away🚀!
 		`
 	};
 };

@@ -1,6 +1,25 @@
-# {{projectName}}
+[![Castt](https://img.shields.io/badge/castt-purple.svg?style=for-the-badge)](http://castt.app)
 
-## Build Setup
+# {{displayName}}
+
+[![A Cubefuse Project](https://img.shields.io/badge/a_project_by-cubefuse-blue.svg?style=for-the-badge)](http://cubefuse.org)
+
+
+>  {{description}}
+
+## Table of Contents
+- [Getting Started](#getting-started)
+- [Development](#development)
+- [Deployment](#deployment)
+- [Copyright Notice](#copyright-notice)
+
+## Getting Started
+
+{{description}}
+
+TODO: Add more details about this microservice.
+
+## Development
 
 ``` bash
 # Install dependencies
@@ -11,23 +30,18 @@ npm run dev
 
 # Start production
 npm start
-{{#jest}}
 
 # Run unit tests
 npm test
 
 # Run continuous test mode
 npm run ci
-{{/jest}}
-{{#lint}}
 
 # Run ESLint
 npm run lint
-{{/lint}}
 ```
 
-{{#docker}}
-## Run in Docker
+## Deployment
 
 **Build Docker image**
 ```bash
@@ -38,4 +52,12 @@ $ docker build -t {{projectName}} .
 ```bash
 $ docker run -d {{projectName}}
 ```
-{{/docker}}
+
+
+## Copyright Notice
+
+Copyright © 2018- Cubefuse. All Rights Reserved.
+
+Unauthorized copying via any medium is strictly prohibited.
+
+Proprietary and confidential.

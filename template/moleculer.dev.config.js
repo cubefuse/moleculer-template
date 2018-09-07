@@ -3,7 +3,9 @@
 module.exports = {
   logger: true,
   logLevel: "info",
+  logFormatter: "default",
 
-  transporter: "NATS",
-  cacher: "Redis"
+  // transporter: "NATS",
+
+  hotReload: true
 };

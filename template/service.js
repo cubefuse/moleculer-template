@@ -1,7 +1,8 @@
 "use strict";
 
 module.exports = {
-	name: "greeter",
+	name: "example",
+	version: 1,
 
 	/**
 	 * Service settings
@@ -13,7 +14,7 @@ module.exports = {
 	/**
 	 * Service dependencies
 	 */
-	//dependencies: [],	
+	//dependencies: [],
 
 	/**
 	 * Actions
@@ -22,16 +23,16 @@ module.exports = {
 
 		/**
 		 * Say a 'Hello'
-		 * 
-		 * @returns 
+		 *
+		 * @returns
 		 */
 		hello() {
-			return "Hello Moleculer";
+			return "Hello Castt";
 		},
 
 		/**
 		 * Welcome a username
-		 * 
+		 *
 		 * @param {String} name - User name
 		 */
 		welcome: {
@@ -77,5 +78,5 @@ module.exports = {
 	 */
 	stopped() {
 
-	}	
+	}
 };
